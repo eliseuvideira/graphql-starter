@@ -33,6 +33,11 @@
     dotenv "^10.0.0"
     dotenv-safe "^8.2.0"
 
+"@ev-fns/endpoint@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@ev-fns/endpoint/-/endpoint-1.0.0.tgz#49abbc5da16ad1a6344378abefb58ecb387673cc"
+  integrity sha512-Dt8BE/3e4YefBPxRlNfAt1pIyQ2us4qbkSDZM6mEgrL8Qt2khJTsLbNAB+4UoBQD4aQqh0U0mdTZhaouF9/WQg==
+
 "@ev-fns/errors@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@ev-fns/errors/-/errors-0.1.1.tgz#8f3cace52757524bacb5e44b63b97a2c3e3c995e"
@@ -1073,7 +1078,7 @@ human-signals@^2.1.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
-husky@^8.0.1:
+husky@^8.0.0:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.1.tgz#511cb3e57de3e3190514ae49ed50f6bc3f50b3e9"
   integrity sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==

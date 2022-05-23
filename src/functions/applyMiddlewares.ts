@@ -46,7 +46,7 @@ export const applyMiddlewares = async ({ app }: ApplyMiddlewaresProps) => {
   }
 
   // Dynamically Importing Routes
-  const ROUTES_DIRECTORY = path.join(__dirname, "..", "routes");
+  const ROUTES_DIRECTORY = path.join(__dirname, "..", "api", "rest", "routes");
 
   const routesDirectoryExists = await checkDirectoryExists(ROUTES_DIRECTORY);
 
