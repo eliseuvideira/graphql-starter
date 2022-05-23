@@ -12,6 +12,9 @@ declare namespace NodeJS {
     // string, example: 0obL7KelLTFWHzwH1mHdCumP94ubvPdmJsHtw7r5QmAY
     API_TOKEN: string;
 
+    // string(* | https://example.com,https://www.example.com), example: *
+    API_CORS_ORIGINS: string;
+
     // string, example: registry.example.com/graphql-starter
     DOCKER_IMAGE: string;
 

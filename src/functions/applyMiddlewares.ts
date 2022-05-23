@@ -5,6 +5,7 @@ import express from "express";
 import fs from "fs";
 import morgan from "morgan";
 import path from "path";
+import { CORS_ORIGINS } from "../utils/constants";
 import { checkDirectoryExists } from "./checkDirectoryExists";
 
 export interface ApplyMiddlewaresProps {
@@ -13,7 +14,22 @@ export interface ApplyMiddlewaresProps {
 
 export const applyMiddlewares = async ({ app }: ApplyMiddlewaresProps) => {
   // Enabling CORS
-  app.use(cors());
+  app.use(
+    cors({
+      origin:
+        CORS_ORIGINS.length === 1 && CORS_ORIGINS[0] === "*"
+          ? "*"
+          : (origin, callback) => {
+              if (origin && CORS_ORIGINS.includes(origin)) {
+                callback(null, true);
+
+                return;
+              }
+
+              callback(null, false);
+            },
+    }),
+  );
 
   // Parsing `application/json` Body
   app.use(json());
@@ -40,11 +56,11 @@ export const applyMiddlewares = async ({ app }: ApplyMiddlewaresProps) => {
     for (const route of routes) {
       const filepath = path.join(ROUTES_DIRECTORY, route);
 
-      const module = require(filepath);
+      const module = await import(filepath);
 
       if (!module.default) {
         throw new Error(
-          `Failed to import \`route\` "${filepath}", \`default\` exports is undefined.`
+          `Failed to import \`route\` "${filepath}", \`default\` exports is undefined.`,
         );
       }
 
