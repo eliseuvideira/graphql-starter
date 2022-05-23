@@ -1,7 +1,7 @@
 import { exception, notFound } from "@ev-fns/errors";
 import { json } from "body-parser";
 import cors from "cors";
-import express from "express";
+import express, { Router } from "express";
 import fs from "fs";
 import morgan from "morgan";
 import path from "path";
@@ -10,9 +10,13 @@ import { checkDirectoryExists } from "./checkDirectoryExists";
 
 export interface ApplyMiddlewaresProps {
   app: express.Express;
+  apollo: Router;
 }
 
-export const applyMiddlewares = async ({ app }: ApplyMiddlewaresProps) => {
+export const applyMiddlewares = async ({
+  app,
+  apollo,
+}: ApplyMiddlewaresProps) => {
   // Enabling CORS
   app.use(
     cors({
@@ -44,6 +48,9 @@ export const applyMiddlewares = async ({ app }: ApplyMiddlewaresProps) => {
     // Returning 200 Health Check
     app.get("/", (req, res) => res.status(200).end());
   }
+
+  // Apply Apollo Handler
+  app.use(apollo);
 
   // Dynamically Importing Routes
   const ROUTES_DIRECTORY = path.join(__dirname, "..", "api", "rest", "routes");
