@@ -5,12 +5,22 @@
   "author": "Eliseu Videira <eliseuvideira1@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.12",
+    "@types/morgan": "^1.9.3",
     "@types/node": "^17.0.35",
     "ts-node": "^10.8.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@ev-fns/dotenv": "^1.0.1",
+    "@ev-fns/errors": "^0.1.1",
+    "@ev-fns/server": "^0.2.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "ts-node-dev src/server.ts",
