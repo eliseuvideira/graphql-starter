@@ -23,5 +23,8 @@ declare namespace NodeJS {
 
     // string(UTC | America/Sao_Paulo | America/Chicago | ...), example: UTC
     TZ?: string;
+
+    // boolean("0" | "1")
+    GRAPHQL_DEBUG: "0" | "1";
   }
 }

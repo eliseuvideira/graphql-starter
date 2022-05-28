@@ -1,6 +1,4 @@
-export const createLoaders = () => ({
-  hello: "",
-});
+export const createLoaders = () => ({});
 
 export type CreateLoaders = typeof createLoaders;
 
